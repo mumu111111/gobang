@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Cell from './Cell'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <Cell />
   </React.StrictMode>,
   document.getElementById('root')
 );
