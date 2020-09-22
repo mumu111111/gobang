@@ -1,16 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import Cell from './Cell'
+import './index.css'
+const cells = [
+    [1, null, null],
+    [null, null, null],
+    [null, null, null],
+]
+const Cell = function (props) {
+    return  (
+        <div className="cell">
+            {props.text}
+        </div>
+    )
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-    <Cell />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Chessboard = function () {
+    return (
+        <div>
+            {cells.map(items=> <div className="row">
+                {items.map(item => <div className="col">
+                    <Cell text={item} />
+                </div>)}
+            </div>)}
+        </div>
+    )
+}
+// export default Chessboard;
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+
+ReactDOM.render(<div>
+    <Chessboard />
+</div>, document.getElementById('root'))
