@@ -1,9 +1,15 @@
 import React from 'react';
 
 function App() {
+  const [n, setN] = React.useState(0)
   return (
     <div className="App">
-     hi 
+      {n}
+      <button onClick={()=> {
+        setN(n+1)
+      }}>
+        +1
+      </button>
     </div>
   );
 }

@@ -22,7 +22,7 @@ function Cell() {
                     <div className= "row">
                         {items.map(item =>
                             <div className= "col">
-                                {U({text: item})}
+                                { U({text: item}) }
                             </div>)
                         }
                     </div>
