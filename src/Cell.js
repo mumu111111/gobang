@@ -1,23 +1,28 @@
 import React from 'react';
 import './index.css';
 const xx = [
-    [1, 1, 1],
-    [2, 2, 2],
-    [3, 3, 3]
+    ['', 1, 1],
+    [2, '', 2],
+    [3, '', 3]
 ]
 
-
-
+const U = function(props){
+    return (
+        <div>
+            { props.text }
+        </div>
+    )
+}
 
 function Cell() {
     return (
         <div>
             {
                 xx.map(items =>
-                    <div>
+                    <div className= "row">
                         {items.map(item =>
-                            <div>
-                                {item}
+                            <div className= "col">
+                                {U({text: item})}
                             </div>)
                         }
                     </div>
